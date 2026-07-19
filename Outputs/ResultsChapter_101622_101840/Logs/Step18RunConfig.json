@@ -1,0 +1,139 @@
+{
+  "ProjectRoot": "/data/users/kabasmen/MethaneProjectTFM",
+  "OutputDir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/ResultsChapter_101622_101840",
+  "RunTags": [
+    "101622",
+    "101840"
+  ],
+  "FeatureConfigs": [
+    "ConfigB",
+    "ConfigC"
+  ],
+  "Split": "Test",
+  "FixedCount": 4,
+  "ReferenceModel": "TransformerPlus",
+  "ReferenceConfig": "ConfigB",
+  "IndividualGroups": [
+    "BestPredictions",
+    "ErrorCases",
+    "WorstPredictions"
+  ],
+  "IndividualModels": [
+    "All"
+  ],
+  "IndividualPerGroup": 1,
+  "RawContextAvailable": true,
+  "ExcludedVisualSampleIds": [
+    "28700c4e-b827-4212-aa0d-bf84be66c175",
+    "50792a95-3b0a-48f6-9ecb-0e2161486b5e",
+    "53495d11-a6cd-43e7-b22f-35377160b553",
+    "bc4b9c5e-d80c-4e0f-a49e-33848627748e"
+  ],
+  "ExcludedVisualSampleIdsCount": 4,
+  "ModelSpecs": [
+    {
+      "model_name": "SimpleUNet",
+      "feature_config": "ConfigB",
+      "run_tag": "101622",
+      "run_id": "SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_name": "Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull/Tables/VisualizationCaseSet_SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull.csv",
+      "threshold": 0.5
+    },
+    {
+      "model_name": "SimpleUNet",
+      "feature_config": "ConfigC",
+      "run_tag": "101622",
+      "run_id": "SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_name": "Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull/Tables/VisualizationCaseSet_SimpleUNet_Bs4Ep30_D005_LR1e4_DatedFull.csv",
+      "threshold": 0.5
+    },
+    {
+      "model_name": "EnhancedUNet",
+      "feature_config": "ConfigB",
+      "run_tag": "101622",
+      "run_id": "EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_name": "Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull/Tables/VisualizationCaseSet_EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull.csv",
+      "threshold": 0.5
+    },
+    {
+      "model_name": "EnhancedUNet",
+      "feature_config": "ConfigC",
+      "run_tag": "101622",
+      "run_id": "EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_name": "Bs4Ep30_D005_LR1e4_DatedFull",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull/Tables/VisualizationCaseSet_EnhancedUNet_Bs4Ep30_D005_LR1e4_DatedFull.csv",
+      "threshold": 0.5
+    },
+    {
+      "model_name": "TransformerUNet",
+      "feature_config": "ConfigB",
+      "run_tag": "101622",
+      "run_id": "TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+      "run_name": "Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigB/TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull/Tables/VisualizationCaseSet_TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull.csv",
+      "threshold": 0.5
+    },
+    {
+      "model_name": "TransformerUNet",
+      "feature_config": "ConfigC",
+      "run_tag": "101622",
+      "run_id": "TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+      "run_name": "Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull/Tables/VisualizationCaseSet_TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull.csv",
+      "threshold": 0.5
+    },
+    {
+      "model_name": "TransformerPlus",
+      "feature_config": "ConfigB",
+      "run_tag": "101840",
+      "run_id": "TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+      "run_name": "Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Tables/VisualizationCaseSet_TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus.csv",
+      "threshold": 0.5
+    },
+    {
+      "model_name": "TransformerPlus",
+      "feature_config": "ConfigC",
+      "run_tag": "101840",
+      "run_id": "TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+      "run_name": "Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+      "run_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840",
+      "feature_dir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigC/Features",
+      "model_root": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+      "metrics_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Metrics/TestMetricsBySample.csv",
+      "case_set_path": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Tables/VisualizationCaseSet_TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus.csv",
+      "threshold": 0.5
+    }
+  ]
+}

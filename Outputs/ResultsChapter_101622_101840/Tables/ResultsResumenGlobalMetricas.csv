@@ -1,0 +1,9 @@
+ExperimentId,Modelo,Configuracion,BestThreshold,MeanDice,MeanIoU,MeanPrecision,MeanRecall,GlobalDice,GlobalIoU
+E4,TransformerPlus,Configuración B,0.3,0.6368,0.5082,0.6658,0.7001,0.6779,0.5127
+E4,TransformerPlus,Configuración C,0.3,0.6303,0.5014,0.67,0.6774,0.6759,0.5105
+E3,U-Net Transformer,Configuración B,0.3,0.625,0.4956,0.6511,0.693,0.6548,0.4867
+E2,U-Net mejorada,Configuración B,0.6,0.6158,0.4889,0.6657,0.6617,0.6657,0.4989
+E2,U-Net mejorada,Configuración C,0.3,0.6122,0.4861,0.6968,0.6379,0.6363,0.4666
+E3,U-Net Transformer,Configuración C,0.3,0.6005,0.4686,0.6691,0.6434,0.6026,0.4313
+E1,U-Net simple,Configuración B,0.3,0.591,0.4635,0.6779,0.6473,0.6429,0.4737
+E1,U-Net simple,Configuración C,0.5,0.5902,0.4572,0.6369,0.6568,0.5908,0.4193

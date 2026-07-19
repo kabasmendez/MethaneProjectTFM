@@ -1,0 +1,65 @@
+Modelo,Configuración,Métrica,N,Spearman,Pearson
+U-Net mejorada,Configuración B,Dice,528,0.2053,0.162
+U-Net mejorada,Configuración B,IoU,528,0.2053,0.1651
+U-Net mejorada,Configuración B,Precision,528,0.2298,0.2192
+U-Net mejorada,Configuración B,Recall,528,0.0825,0.0735
+U-Net mejorada,Configuración B,FalseNegativeRate,528,-0.0825,-0.0735
+U-Net mejorada,Configuración B,FPBurden,528,-0.207,-0.1361
+U-Net mejorada,Configuración B,FNBurden,528,-0.0825,-0.0735
+U-Net mejorada,Configuración B,AreaRatio,528,-0.1075,-0.1165
+U-Net mejorada,Configuración C,Dice,528,0.194,0.1475
+U-Net mejorada,Configuración C,IoU,528,0.194,0.1416
+U-Net mejorada,Configuración C,Precision,528,0.1181,0.1243
+U-Net mejorada,Configuración C,Recall,528,0.1123,0.0863
+U-Net mejorada,Configuración C,FalseNegativeRate,528,-0.1123,-0.0863
+U-Net mejorada,Configuración C,FPBurden,528,-0.109,-0.0558
+U-Net mejorada,Configuración C,FNBurden,528,-0.1123,-0.0863
+U-Net mejorada,Configuración C,AreaRatio,528,-0.0312,-0.0471
+U-Net simple,Configuración B,Dice,528,0.1601,0.1068
+U-Net simple,Configuración B,IoU,528,0.1601,0.106
+U-Net simple,Configuración B,Precision,528,0.1217,0.1368
+U-Net simple,Configuración B,Recall,528,0.0695,0.0223
+U-Net simple,Configuración B,FalseNegativeRate,528,-0.0695,-0.0223
+U-Net simple,Configuración B,FPBurden,528,-0.1207,-0.1118
+U-Net simple,Configuración B,FNBurden,528,-0.0695,-0.0223
+U-Net simple,Configuración B,AreaRatio,528,-0.0509,-0.1038
+U-Net simple,Configuración C,Dice,528,0.2078,0.1597
+U-Net simple,Configuración C,IoU,528,0.2078,0.157
+U-Net simple,Configuración C,Precision,528,0.2891,0.2611
+U-Net simple,Configuración C,Recall,528,-0.0086,-0.0038
+U-Net simple,Configuración C,FalseNegativeRate,528,0.0086,0.0038
+U-Net simple,Configuración C,FPBurden,528,-0.2842,-0.111
+U-Net simple,Configuración C,FNBurden,528,0.0086,0.0038
+U-Net simple,Configuración C,AreaRatio,528,-0.206,-0.1104
+TransformerPlus,Configuración B,Dice,528,0.1659,0.1378
+TransformerPlus,Configuración B,IoU,528,0.1659,0.1337
+TransformerPlus,Configuración B,Precision,528,0.2156,0.1833
+TransformerPlus,Configuración B,Recall,528,0.0538,0.0493
+TransformerPlus,Configuración B,FalseNegativeRate,528,-0.0538,-0.0493
+TransformerPlus,Configuración B,FPBurden,528,-0.207,-0.1392
+TransformerPlus,Configuración B,FNBurden,528,-0.0538,-0.0493
+TransformerPlus,Configuración B,AreaRatio,528,-0.1513,-0.1274
+TransformerPlus,Configuración C,Dice,528,0.2059,0.1579
+TransformerPlus,Configuración C,IoU,528,0.2059,0.157
+TransformerPlus,Configuración C,Precision,528,0.2392,0.211
+TransformerPlus,Configuración C,Recall,528,0.0853,0.0755
+TransformerPlus,Configuración C,FalseNegativeRate,528,-0.0853,-0.0755
+TransformerPlus,Configuración C,FPBurden,528,-0.2225,-0.1499
+TransformerPlus,Configuración C,FNBurden,528,-0.0853,-0.0755
+TransformerPlus,Configuración C,AreaRatio,528,-0.1196,-0.1286
+U-Net Transformer,Configuración B,Dice,528,0.1661,0.1039
+U-Net Transformer,Configuración B,IoU,528,0.1661,0.0994
+U-Net Transformer,Configuración B,Precision,528,0.2286,0.1994
+U-Net Transformer,Configuración B,Recall,528,-0.001,-0.0287
+U-Net Transformer,Configuración B,FalseNegativeRate,528,0.001,0.0287
+U-Net Transformer,Configuración B,FPBurden,528,-0.2387,-0.1714
+U-Net Transformer,Configuración B,FNBurden,528,0.001,0.0287
+U-Net Transformer,Configuración B,AreaRatio,528,-0.2033,-0.1759
+U-Net Transformer,Configuración C,Dice,528,0.2364,0.1777
+U-Net Transformer,Configuración C,IoU,528,0.2364,0.1727
+U-Net Transformer,Configuración C,Precision,528,0.2077,0.2021
+U-Net Transformer,Configuración C,Recall,528,0.1377,0.1006
+U-Net Transformer,Configuración C,FalseNegativeRate,528,-0.1377,-0.1006
+U-Net Transformer,Configuración C,FPBurden,528,-0.1694,-0.0837
+U-Net Transformer,Configuración C,FNBurden,528,-0.1377,-0.1006
+U-Net Transformer,Configuración C,AreaRatio,528,-0.0752,-0.0745

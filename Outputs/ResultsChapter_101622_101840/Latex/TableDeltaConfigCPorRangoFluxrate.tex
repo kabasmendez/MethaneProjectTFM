@@ -1,0 +1,24 @@
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Diferencia media entre Configuración C y Configuración B por rango de fluxrate.}
+    \label{tab:delta_configc_por_rango_fluxrate}
+    \begin{tabular}{lcccccc}
+        \toprule
+        Modelo & Rango fluxrate & $\Delta$Dice & $\Delta$Exhaust. & $\Delta$Prec. & $\Delta$FP/área & $\Delta$FN/área \\
+        \midrule
+        TransformerPlus & Alto & 0.0055 & -0.0084 & 0.0192 & -0.0315 & 0.0084 \\
+        TransformerPlus & Bajo & -0.0172 & -0.0364 & -0.0022 & -0.1125 & 0.0364 \\
+        TransformerPlus & Medio & -0.0078 & -0.0234 & -0.0043 & -0.0744 & 0.0234 \\
+        U-Net Transformer & Alto & 0.0048 & 0.0003 & 0.0229 & 0.2098 & -0.0003 \\
+        U-Net Transformer & Bajo & -0.0489 & -0.0916 & 0.0132 & 0.2961 & 0.0916 \\
+        U-Net Transformer & Medio & -0.0295 & -0.0577 & 0.0177 & -0.0102 & 0.0577 \\
+        U-Net mejorada & Alto & -0.0042 & -0.0198 & 0.0025 & 0.2099 & 0.0198 \\
+        U-Net mejorada & Bajo & 0.0013 & -0.0280 & 0.0601 & 0.1258 & 0.0280 \\
+        U-Net mejorada & Medio & -0.0080 & -0.0237 & 0.0307 & -0.0709 & 0.0237 \\
+        U-Net simple & Alto & 0.0133 & -0.0074 & 0.0197 & 0.1463 & 0.0074 \\
+        U-Net simple & Bajo & -0.0068 & 0.0300 & -0.0784 & 0.5496 & -0.0300 \\
+        U-Net simple & Medio & -0.0088 & 0.0061 & -0.0643 & 0.1392 & -0.0061 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

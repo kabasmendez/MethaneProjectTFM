@@ -1,0 +1,9 @@
+Modelo,Aceptable,Vacía,FN severo,FP severo,Saturada,Otros,Cfg,Total
+U-Net simple,352,26,51,18,0,81,B,528
+U-Net simple,360,8,48,30,2,80,C,528
+U-Net mejorada,384,11,54,18,0,61,B,528
+U-Net mejorada,373,15,51,17,2,70,C,528
+U-Net Transformer,373,4,40,35,0,76,B,528
+U-Net Transformer,349,7,43,28,2,99,C,528
+TransformerPlus,379,5,37,26,0,81,B,528
+TransformerPlus,386,8,43,21,0,70,C,528

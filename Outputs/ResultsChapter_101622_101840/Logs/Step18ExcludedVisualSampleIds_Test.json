@@ -1,0 +1,14 @@
+{
+  "Split": "Test",
+  "ExcludeQualityIssues": true,
+  "ExcludeSaturated": true,
+  "QualityAuditPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/ResultsChapter_101622_101840/Tables/Step19SampleQualityAudit.csv",
+  "AnomalyAuditPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/ResultsChapter_101622_101840/Tables/Step19MetricsAnomalyAudit.csv",
+  "ExcludedUniqueSampleIds": 4,
+  "ExcludedSampleIds": [
+    "28700c4e-b827-4212-aa0d-bf84be66c175",
+    "50792a95-3b0a-48f6-9ecb-0e2161486b5e",
+    "53495d11-a6cd-43e7-b22f-35377160b553",
+    "bc4b9c5e-d80c-4e0f-a49e-33848627748e"
+  ]
+}

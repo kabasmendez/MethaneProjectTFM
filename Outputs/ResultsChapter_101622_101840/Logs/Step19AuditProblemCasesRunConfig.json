@@ -1,0 +1,23 @@
+{
+  "ProjectRoot": "/data/users/kabasmen/MethaneProjectTFM",
+  "OutputDir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/ResultsChapter_101622_101840",
+  "RunTags": [
+    "101622",
+    "101840"
+  ],
+  "FeatureConfigs": [
+    "ConfigB",
+    "ConfigC"
+  ],
+  "Splits": [
+    "Train",
+    "Validation",
+    "Test"
+  ],
+  "SampleId": null,
+  "BlackMeanThreshold": 0.02,
+  "BlackStdThreshold": 0.01,
+  "SaturatedThreshold": 0.99,
+  "AreaRatioThreshold": 20.0,
+  "MaxSamples": null
+}

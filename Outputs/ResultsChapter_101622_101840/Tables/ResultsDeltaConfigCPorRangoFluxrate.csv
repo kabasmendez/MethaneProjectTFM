@@ -1,0 +1,13 @@
+Modelo,ModelName,FluxrateBin,DeltaDiceMean,DeltaDiceMedian,DeltaDiceCount,DeltaRecallMean,DeltaRecallMedian,DeltaRecallCount,DeltaPrecisionMean,DeltaPrecisionMedian,DeltaPrecisionCount,DeltaFPBurdenMean,DeltaFPBurdenMedian,DeltaFPBurdenCount,DeltaFNBurdenMean,DeltaFNBurdenMedian,DeltaFNBurdenCount
+TransformerPlus,TransformerPlus,Alto,0.0055,0.0013,176,-0.0084,-0.013,176,0.0192,0.0133,176,-0.0315,-0.014,176,0.0084,0.013,176
+TransformerPlus,TransformerPlus,Bajo,-0.0172,-0.0022,176,-0.0364,-0.0057,176,-0.0022,0.0,176,-0.1125,-0.0077,176,0.0364,0.0057,176
+TransformerPlus,TransformerPlus,Medio,-0.0078,-0.0096,176,-0.0234,-0.0032,176,-0.0043,0.0022,176,-0.0744,-0.0054,176,0.0234,0.0032,176
+U-Net Transformer,TransformerUNet,Alto,0.0048,-0.001,176,0.0003,-0.0084,176,0.0229,0.0108,176,0.2098,-0.012,176,-0.0003,0.0084,176
+U-Net Transformer,TransformerUNet,Bajo,-0.0489,-0.0194,176,-0.0916,-0.0333,176,0.0132,0.0025,176,0.2961,-0.0406,176,0.0916,0.0333,176
+U-Net Transformer,TransformerUNet,Medio,-0.0295,-0.0287,176,-0.0577,-0.0314,176,0.0177,0.0,176,-0.0102,-0.0255,176,0.0577,0.0314,176
+U-Net mejorada,EnhancedUNet,Alto,-0.0042,-0.0053,176,-0.0198,-0.0223,176,0.0025,0.0076,176,0.2099,-0.0068,176,0.0198,0.0223,176
+U-Net mejorada,EnhancedUNet,Bajo,0.0013,0.0,176,-0.028,-0.0215,176,0.0601,0.0192,176,0.1258,-0.0543,176,0.028,0.0215,176
+U-Net mejorada,EnhancedUNet,Medio,-0.008,0.0058,176,-0.0237,0.0,176,0.0307,0.0188,176,-0.0709,-0.0184,176,0.0237,0.0,176
+U-Net simple,SimpleUNet,Alto,0.0133,0.0121,176,-0.0074,-0.0183,176,0.0197,0.0259,176,0.1463,-0.0165,176,0.0074,0.0183,176
+U-Net simple,SimpleUNet,Bajo,-0.0068,-0.0021,176,0.03,0.0,176,-0.0784,-0.0002,176,0.5496,0.0192,176,-0.03,0.0,176
+U-Net simple,SimpleUNet,Medio,-0.0088,-0.0068,176,0.0061,0.0,176,-0.0643,-0.0144,176,0.1392,0.0195,176,-0.0061,0.0,176

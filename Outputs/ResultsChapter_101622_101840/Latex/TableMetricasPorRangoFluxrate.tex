@@ -1,0 +1,36 @@
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Métricas de segmentación por rango de fluxrate.}
+    \label{tab:metricas_por_rango_fluxrate}
+    \begin{tabular}{lccccccccc}
+        \toprule
+        Modelo & Configuración & Rango fluxrate & Dice & IoU & Precisión & Exhaustividad & FNR & FP/área & FN/área \\
+        \midrule
+        U-Net simple & Configuración B & Alto & 0.6398 & 0.5085 & 0.7230 & 0.6718 & 0.3282 & 0.3676 & 0.3282 \\
+        U-Net simple & Configuración B & Bajo & 0.5302 & 0.4104 & 0.6331 & 0.5975 & 0.4025 & 0.8335 & 0.4025 \\
+        U-Net simple & Configuración B & Medio & 0.6029 & 0.4716 & 0.6775 & 0.6724 & 0.3276 & 0.5173 & 0.3276 \\
+        U-Net simple & Configuración C & Alto & 0.6531 & 0.5150 & 0.7427 & 0.6644 & 0.3356 & 0.5139 & 0.3356 \\
+        U-Net simple & Configuración C & Bajo & 0.5233 & 0.3968 & 0.5547 & 0.6275 & 0.3725 & 1.3831 & 0.3725 \\
+        U-Net simple & Configuración C & Medio & 0.5941 & 0.4597 & 0.6132 & 0.6786 & 0.3214 & 0.6565 & 0.3214 \\
+        U-Net mejorada & Configuración B & Alto & 0.6790 & 0.5515 & 0.7485 & 0.7026 & 0.2974 & 0.3574 & 0.2974 \\
+        U-Net mejorada & Configuración B & Bajo & 0.5454 & 0.4264 & 0.5768 & 0.6145 & 0.3855 & 0.8064 & 0.3855 \\
+        U-Net mejorada & Configuración B & Medio & 0.6231 & 0.4887 & 0.6718 & 0.6681 & 0.3319 & 0.5270 & 0.3319 \\
+        U-Net mejorada & Configuración C & Alto & 0.6747 & 0.5441 & 0.7510 & 0.6828 & 0.3172 & 0.5673 & 0.3172 \\
+        U-Net mejorada & Configuración C & Bajo & 0.5467 & 0.4256 & 0.6369 & 0.5865 & 0.4135 & 0.9322 & 0.4135 \\
+        U-Net mejorada & Configuración C & Medio & 0.6151 & 0.4887 & 0.7025 & 0.6444 & 0.3556 & 0.4561 & 0.3556 \\
+        U-Net Transformer & Configuración B & Alto & 0.6746 & 0.5441 & 0.7312 & 0.6996 & 0.3004 & 0.4018 & 0.3004 \\
+        U-Net Transformer & Configuración B & Bajo & 0.5717 & 0.4441 & 0.5720 & 0.6729 & 0.3271 & 1.0387 & 0.3271 \\
+        U-Net Transformer & Configuración B & Medio & 0.6287 & 0.4987 & 0.6503 & 0.7065 & 0.2935 & 0.6111 & 0.2935 \\
+        U-Net Transformer & Configuración C & Alto & 0.6794 & 0.5437 & 0.7541 & 0.6999 & 0.3001 & 0.6116 & 0.3001 \\
+        U-Net Transformer & Configuración C & Bajo & 0.5228 & 0.4000 & 0.5851 & 0.5813 & 0.4187 & 1.3347 & 0.4187 \\
+        U-Net Transformer & Configuración C & Medio & 0.5992 & 0.4621 & 0.6679 & 0.6488 & 0.3512 & 0.6010 & 0.3512 \\
+        TransformerPlus & Configuración B & Alto & 0.6888 & 0.5578 & 0.7395 & 0.7229 & 0.2771 & 0.3729 & 0.2771 \\
+        TransformerPlus & Configuración B & Bajo & 0.5793 & 0.4551 & 0.5933 & 0.6663 & 0.3337 & 0.9503 & 0.3337 \\
+        TransformerPlus & Configuración B & Medio & 0.6423 & 0.5117 & 0.6646 & 0.7112 & 0.2888 & 0.5754 & 0.2888 \\
+        TransformerPlus & Configuración C & Alto & 0.6943 & 0.5618 & 0.7587 & 0.7145 & 0.2855 & 0.3415 & 0.2855 \\
+        TransformerPlus & Configuración C & Bajo & 0.5621 & 0.4383 & 0.5911 & 0.6298 & 0.3702 & 0.8379 & 0.3702 \\
+        TransformerPlus & Configuración C & Medio & 0.6344 & 0.5042 & 0.6603 & 0.6877 & 0.3123 & 0.5010 & 0.3123 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

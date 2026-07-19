@@ -1,0 +1,36 @@
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Métricas por rango de incertidumbre relativa del fluxrate.}
+    \label{tab:metricas_por_incertidumbre_fluxrate}
+    \begin{tabular}{lccccccc}
+        \toprule
+        Modelo & Configuración & Incertidumbre & Dice & Exhaustividad & FNR & FP/área & FN/área \\
+        \midrule
+        TransformerPlus & Configuración B & Alta & 0.6190 & 0.6927 & 0.3073 & 0.6403 & 0.3073 \\
+        TransformerPlus & Configuración B & Baja & 0.6483 & 0.7151 & 0.2849 & 0.6515 & 0.2849 \\
+        TransformerPlus & Configuración B & Media & 0.6431 & 0.6925 & 0.3075 & 0.6070 & 0.3075 \\
+        TransformerPlus & Configuración C & Alta & 0.6264 & 0.6840 & 0.3160 & 0.5623 & 0.3160 \\
+        TransformerPlus & Configuración C & Baja & 0.6151 & 0.6599 & 0.3401 & 0.6043 & 0.3401 \\
+        TransformerPlus & Configuración C & Media & 0.6494 & 0.6882 & 0.3118 & 0.5137 & 0.3118 \\
+        U-Net Transformer & Configuración B & Alta & 0.6102 & 0.6927 & 0.3073 & 0.7354 & 0.3073 \\
+        U-Net Transformer & Configuración B & Baja & 0.6369 & 0.6938 & 0.3062 & 0.6122 & 0.3062 \\
+        U-Net Transformer & Configuración B & Media & 0.6279 & 0.6926 & 0.3074 & 0.7041 & 0.3074 \\
+        U-Net Transformer & Configuración C & Alta & 0.5848 & 0.6252 & 0.3748 & 1.1768 & 0.3748 \\
+        U-Net Transformer & Configuración C & Baja & 0.5915 & 0.6331 & 0.3669 & 0.6420 & 0.3669 \\
+        U-Net Transformer & Configuración C & Media & 0.6252 & 0.6718 & 0.3282 & 0.7285 & 0.3282 \\
+        U-Net mejorada & Configuración B & Alta & 0.6014 & 0.6503 & 0.3497 & 0.4858 & 0.3497 \\
+        U-Net mejorada & Configuración B & Baja & 0.6032 & 0.6597 & 0.3403 & 0.6310 & 0.3403 \\
+        U-Net mejorada & Configuración B & Media & 0.6429 & 0.6752 & 0.3248 & 0.5741 & 0.3248 \\
+        U-Net mejorada & Configuración C & Alta & 0.5967 & 0.6338 & 0.3662 & 0.9987 & 0.3662 \\
+        U-Net mejorada & Configuración C & Baja & 0.6096 & 0.6381 & 0.3619 & 0.5202 & 0.3619 \\
+        U-Net mejorada & Configuración C & Media & 0.6301 & 0.6418 & 0.3582 & 0.4367 & 0.3582 \\
+        U-Net simple & Configuración B & Alta & 0.5691 & 0.6374 & 0.3626 & 0.5669 & 0.3626 \\
+        U-Net simple & Configuración B & Baja & 0.5863 & 0.6451 & 0.3549 & 0.5957 & 0.3549 \\
+        U-Net simple & Configuración B & Media & 0.6175 & 0.6593 & 0.3407 & 0.5559 & 0.3407 \\
+        U-Net simple & Configuración C & Alta & 0.5849 & 0.6797 & 0.3203 & 1.1623 & 0.3203 \\
+        U-Net simple & Configuración C & Baja & 0.5619 & 0.6210 & 0.3790 & 0.8011 & 0.3790 \\
+        U-Net simple & Configuración C & Media & 0.6236 & 0.6698 & 0.3302 & 0.5902 & 0.3302 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
