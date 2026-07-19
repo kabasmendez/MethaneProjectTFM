@@ -1,0 +1,15 @@
+{
+  "RunTag": "101840",
+  "FeatureConfig": "ConfigC",
+  "ModelName": "TransformerUNet",
+  "RunName": "Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+  "BestThreshold": 0.3,
+  "MeanDice": 0.6302727072330132,
+  "MeanIoU": 0.5014269429486448,
+  "MeanPrecision": 0.670033879190245,
+  "MeanRecall": 0.6773648461845372,
+  "GlobalDice": 0.6759327525973071,
+  "GlobalIoU": 0.5104972983234611,
+  "GlobalPrecision": 0.6973972953791427,
+  "GlobalRecall": 0.655750032197832
+}

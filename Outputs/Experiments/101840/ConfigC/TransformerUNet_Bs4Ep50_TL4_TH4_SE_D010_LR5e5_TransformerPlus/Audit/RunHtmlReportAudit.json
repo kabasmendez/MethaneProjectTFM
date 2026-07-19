@@ -1,0 +1,33 @@
+{
+    "ScriptName": "Step14BuildRunHtmlReport.py",
+    "RunTag": "Exp101840",
+    "TimestampUtc": "2026-06-11T09:05:18.000332+00:00",
+    "Parameters": {
+        "RunTag": "Exp101840",
+        "ProjectConfig": "Configs/ProjectConfig.yaml",
+        "FeatureConfig": "ConfigC",
+        "ModelName": "TransformerUNet",
+        "RunName": "Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+        "MaxPredictionLinks": 60
+    },
+    "Inputs": {
+        "TrainingHistory": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Metrics/TrainingHistory.csv",
+        "BestEpochSummary": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Metrics/BestEpochSummary.csv",
+        "ModelRunSummary": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Tables/ModelRunSummary.csv",
+        "TestMetricsSummary": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Metrics/TestMetricsSummary.csv",
+        "TestMetricsBySample": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Metrics/TestMetricsBySample.csv",
+        "PredictionFigureIndex": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Tables/PredictionFigureIndex.csv"
+    },
+    "Outputs": {
+        "RunReport": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Reports/RunReport.html",
+        "PlotlyJs": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Reports/assets/plotly/plotly.min.js",
+        "Audit": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/Exp101840/ConfigC/TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus/Audit/RunHtmlReportAudit.json"
+    },
+    "Status": "Success",
+    "Details": {
+        "ModelRunId": "TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+        "HtmlMode": "VisualPlotlyDashboardMontserratThreeImages",
+        "HtmlSizeBytes": 191586,
+        "VisiblePredictionImages": 3
+    }
+}
