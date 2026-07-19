@@ -1,0 +1,15 @@
+{
+  "RunTag": "101622",
+  "FeatureConfig": "ConfigB",
+  "ModelName": "EnhancedUNet",
+  "RunName": "Bs4Ep30_D005_LR1e4_DatedFull",
+  "BestThreshold": 0.6,
+  "MeanDice": 0.615818993167772,
+  "MeanIoU": 0.4888618520836083,
+  "MeanPrecision": 0.6657267038253246,
+  "MeanRecall": 0.6617383695621276,
+  "GlobalDice": 0.6657272694225719,
+  "GlobalIoU": 0.4989439221581273,
+  "GlobalPrecision": 0.7008194525455371,
+  "GlobalRecall": 0.633981850385975
+}
