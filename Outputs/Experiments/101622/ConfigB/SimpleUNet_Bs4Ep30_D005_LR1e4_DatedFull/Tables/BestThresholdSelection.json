@@ -1,0 +1,15 @@
+{
+  "RunTag": "101622",
+  "FeatureConfig": "ConfigB",
+  "ModelName": "SimpleUNet",
+  "RunName": "Bs4Ep30_D005_LR1e4_DatedFull",
+  "BestThreshold": 0.3,
+  "MeanDice": 0.590955112778248,
+  "MeanIoU": 0.463502826719897,
+  "MeanPrecision": 0.6778528552597515,
+  "MeanRecall": 0.6472505124344381,
+  "GlobalDice": 0.6428560474335733,
+  "GlobalIoU": 0.4736830210371455,
+  "GlobalPrecision": 0.6800458573852638,
+  "GlobalRecall": 0.6095229390582176
+}
