@@ -1,0 +1,38 @@
+{
+  "RunTag": "101622",
+  "FeatureConfig": "ConfigC",
+  "InputChannels": 12,
+  "FeatureNames": [
+    "B8A",
+    "B11",
+    "B12",
+    "NDSWIR",
+    "RatioB12B11",
+    "RatioB12B8A",
+    "MBMP",
+    "MBMPPlus",
+    "DualEnhancementB12B11",
+    "WindSpeed10m",
+    "WindDirCos10m",
+    "WindDirSin10m"
+  ],
+  "ProjectRoot": "/data/users/kabasmen/MethaneProjectTFM",
+  "ProjectConfig": "/data/users/kabasmen/MethaneProjectTFM/Configs/ProjectConfig.yaml",
+  "DataRoot": "/data/databases/METHANE_DATASETS_TACOv2",
+  "DatasetName": "methaneset-s2-finetune",
+  "RootTablesDir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/Tables",
+  "FeatureDir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Features",
+  "TablesDir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Tables",
+  "AuditDir": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Audit",
+  "SummaryPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Tables/FeatureBuildSummary.csv",
+  "SampleSummaryPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101622/ConfigC/Tables/FeatureBuildSampleSummary.csv",
+  "ClipValue": 8.0,
+  "MaxSamplesPerSplit": null,
+  "UseFeatureReadySplits": true,
+  "Methodology": {
+    "UsesGroundTruthForFeatures": false,
+    "UsesPlumeMaskForFeatures": false,
+    "UsesPlumeMaskOnlyAsTargetY": true,
+    "ConfigCWindEncoding": "WindSpeed10m=sqrt(u^2+v^2), WindDirCos10m=u/(speed+eps), WindDirSin10m=v/(speed+eps)"
+  }
+}

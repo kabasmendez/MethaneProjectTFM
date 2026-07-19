@@ -1,0 +1,15 @@
+{
+  "RunTag": "101622",
+  "FeatureConfig": "ConfigC",
+  "ModelName": "TransformerUNet",
+  "RunName": "Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+  "BestThreshold": 0.3,
+  "MeanDice": 0.6004720483309798,
+  "MeanIoU": 0.4686162412444957,
+  "MeanPrecision": 0.6690586554899278,
+  "MeanRecall": 0.6433634739260741,
+  "GlobalDice": 0.6026414082698174,
+  "GlobalIoU": 0.4312718380498404,
+  "GlobalPrecision": 0.6044802425433493,
+  "GlobalRecall": 0.6008137275679977
+}

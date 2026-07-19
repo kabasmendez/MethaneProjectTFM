@@ -1,0 +1,38 @@
+{
+  "RunTag": "101622",
+  "FeatureConfig": "ConfigC",
+  "RunId": "TransformerUNet_Bs4Ep30_TL2_D005_LR1e4_DatedFull",
+  "Split": "Test",
+  "Checkpoint": "BestModel.pt",
+  "Threshold": 0.3,
+  "InputChannels": 12,
+  "FeatureNames": [
+    "B8A",
+    "B11",
+    "B12",
+    "NDSWIR",
+    "RatioB12B11",
+    "RatioB12B8A",
+    "MBMP",
+    "MBMPPlus",
+    "DualEnhancementB12B11",
+    "WindSpeed10m",
+    "WindDirCos10m",
+    "WindDirSin10m"
+  ],
+  "RawContextAvailable": true,
+  "Panels": [
+    "Target SWIR2-NIR-Blue",
+    "Reference SWIR2-NIR-Blue",
+    "Target B11",
+    "Target B12",
+    "Ground truth",
+    "MBMPPlus or MBMP",
+    "CH4 if available",
+    "Predicted probability",
+    "Predicted mask",
+    "TP/FP/FN overlay",
+    "Legend",
+    "Metrics"
+  ]
+}
