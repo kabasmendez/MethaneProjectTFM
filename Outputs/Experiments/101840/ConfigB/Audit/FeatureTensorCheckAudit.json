@@ -1,0 +1,20 @@
+{
+  "RunTag": "101840",
+  "FeatureConfig": "ConfigB",
+  "ExpectedChannels": 9,
+  "FeatureNames": [
+    "B8A",
+    "B11",
+    "B12",
+    "NDSWIR",
+    "RatioB12B11",
+    "RatioB12B8A",
+    "MBMP",
+    "MBMPPlus",
+    "DualEnhancementB12B11"
+  ],
+  "StrictSamples": true,
+  "SummaryPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/Tables/FeatureTensorCheckSummary.csv",
+  "ChannelStatsPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/Tables/FeatureChannelStats.csv",
+  "AllSplitsPassed": true
+}

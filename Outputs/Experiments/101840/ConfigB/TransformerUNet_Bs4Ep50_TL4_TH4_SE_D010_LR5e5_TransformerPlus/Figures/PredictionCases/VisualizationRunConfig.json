@@ -1,0 +1,35 @@
+{
+  "RunTag": "101840",
+  "FeatureConfig": "ConfigB",
+  "RunId": "TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+  "Split": "Test",
+  "Checkpoint": "BestModel.pt",
+  "Threshold": 0.3,
+  "InputChannels": 9,
+  "FeatureNames": [
+    "B8A",
+    "B11",
+    "B12",
+    "NDSWIR",
+    "RatioB12B11",
+    "RatioB12B8A",
+    "MBMP",
+    "MBMPPlus",
+    "DualEnhancementB12B11"
+  ],
+  "RawContextAvailable": true,
+  "Panels": [
+    "Target SWIR2-NIR-Blue",
+    "Reference SWIR2-NIR-Blue",
+    "Target B11",
+    "Target B12",
+    "Ground truth",
+    "MBMPPlus or MBMP",
+    "CH4 if available",
+    "Predicted probability",
+    "Predicted mask",
+    "TP/FP/FN overlay",
+    "Legend",
+    "Metrics"
+  ]
+}

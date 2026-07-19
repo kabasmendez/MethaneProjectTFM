@@ -1,0 +1,33 @@
+{
+  "RunTag": "101840",
+  "FeatureConfig": "ConfigB",
+  "ModelName": "TransformerUNet",
+  "RunName": "Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+  "RunId": "TransformerUNet_Bs4Ep50_TL4_TH4_SE_D010_LR5e5_TransformerPlus",
+  "InputChannels": 9,
+  "OutputChannels": 1,
+  "ModelParameters": {
+    "BaseChannels": 32,
+    "Dropout": 0.1,
+    "TransformerLayers": 4,
+    "TransformerHeads": 4,
+    "UseSqueezeExcitation": true,
+    "ReflectPadding": 4
+  },
+  "Epochs": 50,
+  "BatchSize": 4,
+  "LearningRate": 5e-05,
+  "WeightDecay": 1e-05,
+  "Dropout": 0.1,
+  "BaseChannels": 32,
+  "DiceWeight": 1.0,
+  "Threshold": 0.5,
+  "Device": "cuda",
+  "Seed": 42,
+  "TrainSamples": 2463,
+  "ValidationSamples": 528,
+  "TrainXPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/Features/TrainFeatures.npy",
+  "TrainYPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/Features/TrainMasks.npy",
+  "ValidationXPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/Features/ValidationFeatures.npy",
+  "ValidationYPath": "/data/users/kabasmen/MethaneProjectTFM/Outputs/Experiments/101840/ConfigB/Features/ValidationMasks.npy"
+}
