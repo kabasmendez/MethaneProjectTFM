@@ -1,0 +1,230 @@
+# ============================================================
+# MethaneProjectTFM - .gitignore limpio para GitHub
+# Objetivo:
+# - Subir código, configuración y documentación mínima de ejecución.
+# - NO subir datos, salidas, imágenes, tablas, modelos, checkpoints,
+#   archivos temporales ni carpetas de archivo/documentación interna.
+# ============================================================
+
+
+# ============================================================
+# Carpetas que NO deben subirse
+# ============================================================
+
+Archive/
+archive/
+Docs/
+docs/
+
+Data/
+data/
+Datasets/
+datasets/
+RawData/
+raw_data/
+ProcessedData/
+processed_data/
+Intermediate/
+intermediate/
+
+Outputs/
+outputs/
+Results/
+results/
+Figures/
+figures/
+Tables/
+tables/
+Reports/
+reports/
+Logs/
+logs/
+
+Checkpoints/
+checkpoints/
+Models/
+models/
+Features/
+features/
+Splits/
+splits/
+
+runs/
+wandb/
+mlruns/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.ipynb_checkpoints/
+
+
+# ============================================================
+# Imágenes, figuras y mapas exportados
+# ============================================================
+
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.webp
+*.bmp
+*.gif
+*.svg
+
+
+# ============================================================
+# Tablas, reportes y exportaciones
+# ============================================================
+
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.ods
+*.html
+*.htm
+*.parquet
+*.feather
+*.jsonl
+
+
+# ============================================================
+# Modelos, checkpoints, tensores y objetos binarios
+# ============================================================
+
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+
+# ============================================================
+# Archivos geoespaciales pesados o derivados
+# ============================================================
+
+*.geojson
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qpj
+*.vrt
+*.aux.xml
+*.ovr
+*.nc
+*.grib
+*.grb
+*.SAFE/
+
+
+# ============================================================
+# Python / caché / compilados
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+
+
+# ============================================================
+# Entornos y secretos
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+.venv/
+venv/
+env/
+ENV/
+conda-meta/
+
+*.conda
+
+
+# ============================================================
+# Sistema y editores
+# ============================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+
+*.swp
+*.swo
+*~
+
+
+# ============================================================
+# Notebooks: permitir notebooks, pero no checkpoints
+# Si prefieres NO subir notebooks, descomenta la línea *.ipynb
+# ============================================================
+
+# *.ipynb
+.ipynb_checkpoints/
+
+
+# ============================================================
+# LaTeX temporales
+# ============================================================
+
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+
+# ============================================================
+# PDFs
+# Por defecto NO se ignoran PDF para permitir README/manuales si hiciera falta.
+# Si no quieres subir ningún PDF, descomenta:
+# ============================================================
+
+# *.pdf
+
+
+# ============================================================
+# Archivos grandes comprimidos
+# ============================================================
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z

@@ -1,0 +1,41 @@
+ProjectName: MethaneProjectTFM
+Seed: 42
+
+Dataset:
+  DataRoot: /data/databases/METHANE_DATASETS_TACOv2
+  DatasetName: methaneset-s2-finetune
+
+Outputs:
+  Root: Outputs/Experiments
+
+RunTag:
+  Pattern: "^Exp[0-9]{6}$"
+  Example: Exp241930
+
+Filters:
+  Sector: Oil and Gas
+  MinPercentageClear: 90.0
+  Observability: clear
+  RequirePlume: true
+  RequireGeometry: true
+  RequireProducts:
+    - target
+    - reference
+    - plume
+
+Split:
+  Train: 0.70
+  Validation: 0.15
+  Test: 0.15
+
+ExpectedShapes:
+  Target: [13, 200, 200]
+  Reference: [13, 200, 200]
+  Plume: [200, 200]
+  CH4: [200, 200]
+
+Experiment:
+  Configs:
+    - ConfigA
+    - ConfigB
+    - ConfigC

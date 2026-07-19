@@ -1,0 +1,59 @@
+FeatureConfig: ConfigC
+Description: ConfigC extiende ConfigB con variables meteorológicas de viento en representación
+  intensidad-dirección continua. Mantiene MBMPPlus no supervisado y no usa ground-truth
+  para construir features.
+InputChannels: 12
+OutputChannels: 1
+Features:
+- B8A
+- B11
+- B12
+- NDSWIR
+- RatioB12B11
+- RatioB12B8A
+- MBMP
+- MBMPPlus
+- DualEnhancementB12B11
+- WindSpeed10m
+- WindDirCos10m
+- WindDirSin10m
+RequiresContextMetadata: true
+MethodologicalNotes:
+  MBMPPlus:
+    Variant: UnsupervisedRidgeCleaning
+    UsesGroundTruthMask: false
+    UsesPlumeMask: false
+    UsesSupervisedBackgroundCorrection: false
+    FormulaBase: MBMP = (TargetB12 - ReferenceB12) / ReferenceB12
+    Cleaning: Spatial high-pass cleaning on MBMP using RidgeClean2D
+    Purpose: Reduce smooth background/surface component without using label information.
+    OperationalStatus: Suitable for inference because it only requires target/reference
+      bands.
+  WindFeatures:
+    SourceColumns:
+      U: meteo:wind_u
+      V: meteo:wind_v
+      Source: detection:wind_source
+    Formula:
+      WindSpeed10m: sqrt(wind_u^2 + wind_v^2)
+      WindDirCos10m: wind_u / (WindSpeed10m + eps)
+      WindDirSin10m: wind_v / (WindSpeed10m + eps)
+    Rasterization: Each wind variable is expanded as a constant HxW channel per sample.
+    UsesGroundTruthMask: false
+    UsesPlumeMask: false
+    Purpose: Provide physically interpretable meteorological context related to plume
+      elongation and orientation.
+  ConfigCJustification:
+    WindSpeedVsElongationSpearman: 0.331
+    WindSpeedVsPlumePixelsSpearman: -0.096
+    WindPlumeAlignmentMeanAbsCos: 0.837
+    WindPlumeAlignmentMedianAbsCos: 0.938
+    Decision: Wind variables are included because EDA showed robust alignment between
+      wind vector and plume principal axis, and moderate positive relation between
+      wind speed and plume elongation.
+Notes:
+- This configuration does not use ground-truth plume masks to compute any input feature.
+- Ground-truth masks are used only as supervised training/evaluation targets.
+- Wind direction is encoded with cosine and sine components to avoid angular discontinuity.
+- ConfigC is designed to be selected with --FeatureConfig ConfigC in the same pipeline
+  used for ConfigB.

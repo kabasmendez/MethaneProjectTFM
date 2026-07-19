@@ -1,0 +1,14 @@
+FeatureConfig: ConfigA
+InputChannels: 7
+Description: Configuración espectral base.
+
+Features:
+  - B8A
+  - B11
+  - B12
+  - NDSWIR
+  - RatioB12B11
+  - RatioB12B8A
+  - MBMP
+
+RequiresContextMetadata: false

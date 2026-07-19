@@ -1,0 +1,13 @@
+[project]
+name = "methane-project-tfm"
+version = "0.1.0"
+description = "Pipeline reproducible para segmentación de plumas de metano Sentinel-2."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["Tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

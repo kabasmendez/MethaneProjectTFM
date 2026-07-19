@@ -1,0 +1,232 @@
+Visualization:
+  Backend: matplotlib
+  Dpi: 300
+  SaveFormat: png
+  FigureFaceColor: white
+  AxesFaceColor: white
+  FontFamily: Montserrat
+  FallbackFontFamily: DejaVu Sans
+  TextColors:
+    Title: "#0B3C73"
+    AxisLabel: "#1F2A44"
+    TickLabel: "#2F3A4A"
+    Annotation: "#2F3A4A"
+    ColorbarLabel: "#2F3A4A"
+    LegendText: "#1F2A44"
+  FontSizes:
+    Title: 12
+    Subtitle: 10
+    AxisLabel: 9
+    TickLabel: 8
+    ColorbarLabel: 9
+    ColorbarTick: 8
+    Annotation: 8
+  FigureSizes:
+    Single:
+    - 6
+    - 5
+    Panel1x3:
+    - 12
+    - 4
+    Panel2x3:
+    - 12
+    - 8
+    Panel3x4:
+    - 14
+    - 10
+    ArticlePanel:
+    - 16
+    - 10
+  Image:
+    Interpolation: nearest
+    Origin: upper
+    StretchLowerPercentile: 2
+    StretchUpperPercentile: 98
+    Gamma: 1.0
+  MapElements:
+    ShowAxes: false
+    ShowScaleBar: true
+    ShowNorthArrow: true
+    PixelSizeMeters: 20
+    TileSizePixels: 200
+    ShowMetadata: true
+    ApproxExtentText: 200 x 200 px - 20 m/pixel - approx. 4 km x 4 km
+  FallbackFontFamily: DejaVu Sans
+ColorMaps:
+  Reflectance:
+    Cmap: gray
+    RobustPercentiles:
+    - 2
+    - 98
+    Colorbar: true
+    ColorbarLabel: Reflectance
+  RGB:
+    Bands:
+    - B04
+    - B03
+    - B02
+    RobustPercentiles:
+    - 2
+    - 98
+    Gamma: 1.0
+    Colorbar: false
+  SwirComposite:
+    Bands:
+    - B12
+    - B11
+    - B8A
+    RobustPercentiles:
+    - 2
+    - 98
+    Gamma: 1.0
+    Colorbar: false
+  Differential:
+    Cmap: RdBu_r
+    CenterZero: true
+    RobustPercentiles:
+    - 2
+    - 98
+    Colorbar: true
+    ColorbarLabel: Feature value
+  Ratio:
+    Cmap: viridis
+    CenterZero: false
+    RobustPercentiles:
+    - 2
+    - 98
+    Colorbar: true
+    ColorbarLabel: Ratio value
+  CH4:
+    Cmap: plasma
+    CenterZero: false
+    RobustPercentiles:
+    - 2
+    - 98
+    Colorbar: true
+    ColorbarLabel: Delta XCH4
+  Probability:
+    Cmap: viridis
+    Vmin: 0.0
+    Vmax: 1.0
+    Colorbar: true
+    ColorbarLabel: Plume probability
+  BinaryMask:
+    GroundTruthColor: white
+    PredictionColor: red
+    Alpha: 0.55
+    ContourColor: black
+    ContourLineWidth: 0.8
+  ErrorMap:
+    TruePositiveColor: yellow
+    FalsePositiveColor: red
+    FalseNegativeColor: blue
+    Alpha: 0.75
+    Legend: true
+FeatureStyles:
+  B8A:
+    Style: Reflectance
+    Title: B8A
+  B11:
+    Style: Reflectance
+    Title: B11
+  B12:
+    Style: Reflectance
+    Title: B12
+  NDSWIR:
+    Style: Differential
+    Title: NDSWIR
+  RatioB12B11:
+    Style: Ratio
+    Title: B12/B11
+  RatioB12B8A:
+    Style: Ratio
+    Title: B12/B8A
+  MBMP:
+    Style: Differential
+    Title: MBMP
+  MBMPPlus:
+    Style: Differential
+    Title: MBMP+
+  DualEnhancementB12B11:
+    Style: Differential
+    Title: DualEnh
+  WindSin:
+    Style: Differential
+    Title: Wind sin
+  WindCos:
+    Style: Differential
+    Title: Wind cos
+  WindSpeed:
+    Style: Ratio
+    Title: Wind speed
+  SolarAzimuthSin:
+    Style: Differential
+    Title: Solar azimuth sin
+  SolarAzimuthCos:
+    Style: Differential
+    Title: Solar azimuth cos
+Panels:
+  EvaluationColumns:
+  - RgbTarget
+  - GroundTruth
+  - Probability
+  - Prediction
+  - ErrorMap
+  FeaturePreviewMaxColumns: 3
+  SelectedCasesMaxRows: 6
+PlumeContours:
+  GroundTruth:
+    Color: white
+    LineStyle: solid
+    LineWidth: 1.6
+    Label: Ground truth
+  PredictionConfigA:
+    Color: cyan
+    LineStyle: solid
+    LineWidth: 1.5
+    Label: Prediction ConfigA
+  PredictionConfigB:
+    Color: lime
+    LineStyle: solid
+    LineWidth: 1.5
+    Label: Prediction ConfigB
+  PredictionConfigC:
+    Color: magenta
+    LineStyle: solid
+    LineWidth: 1.5
+    Label: Prediction ConfigC
+Legends:
+  ShowPlumeLegend: true
+  Location: lower center
+  FrameAlpha: 0.9
+  FontSize: 8
+PanelTemplates:
+  SampleOverviewBase:
+  - Kind: rgb
+    Image: TargetRGB
+    Title: Target RGB
+    PlumeRole: GroundTruth
+  - Kind: rgb
+    Image: ReferenceRGB
+    Title: Reference RGB
+    PlumeRole: GroundTruth
+  - Kind: rgb
+    Image: TargetSWIR
+    Title: Target SWIR B12-B11-B8A
+    PlumeRole: GroundTruth
+  - Kind: rgb
+    Image: ReferenceSWIR
+    Title: Reference SWIR B12-B11-B8A
+    PlumeRole: GroundTruth
+  - Kind: channel
+    Image: CH4
+    Title: CH4 enhancement
+    Cmap: plasma
+    PlumeRole: GroundTruth
+    ColorbarLabel: Delta XCH4
+  - Kind: mask
+    Image: Plume
+    Title: Plume ground truth
+    Cmap: gray
+    PlumeRole: GroundTruth
+    Normalize: false

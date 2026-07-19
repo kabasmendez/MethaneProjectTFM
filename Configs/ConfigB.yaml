@@ -1,0 +1,35 @@
+FeatureConfig: ConfigB
+InputChannels: 9
+Description: ConfigB extendida con MBMPPlus no supervisado y DualEnhancementB12B11.
+
+Features:
+  - B8A
+  - B11
+  - B12
+  - NDSWIR
+  - RatioB12B11
+  - RatioB12B8A
+  - MBMP
+  - MBMPPlus
+  - DualEnhancementB12B11
+
+RequiresContextMetadata: false
+
+MethodologicalNotes:
+  MBMPPlus:
+    Variant: UnsupervisedRidgeCleaning
+    UsesGroundTruthMask: false
+    UsesPlumeMask: false
+    UsesSupervisedBackgroundCorrection: false
+    FormulaBase: MBMP = (TargetB12 - ReferenceB12) / ReferenceB12
+    Cleaning: Spatial high-pass cleaning on MBMP using RidgeClean2D
+    Purpose: Reduce smooth background/surface component without using label information.
+    OperationalStatus: Suitable for inference because it only requires target/reference bands.
+
+  DualEnhancementB12B11:
+    Formula: (B12_target / B11_target) / (B12_reference / B11_reference) - 1
+    Purpose: Enhance B12 change relative to B11 background variation.
+
+Notes:
+  - No input feature in this configuration uses ground-truth plume masks.
+  - Ground-truth plume masks are used only as segmentation targets during training and evaluation.

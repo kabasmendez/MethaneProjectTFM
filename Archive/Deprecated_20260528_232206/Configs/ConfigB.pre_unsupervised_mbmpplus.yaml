@@ -1,0 +1,27 @@
+FeatureConfig: ConfigB
+InputChannels: 9
+Description: ConfigA extendida con MBMPPlus supervisado y DualEnhancementB12B11.
+
+Features:
+  - B8A
+  - B11
+  - B12
+  - NDSWIR
+  - RatioB12B11
+  - RatioB12B8A
+  - MBMP
+  - MBMPPlus
+  - DualEnhancementB12B11
+
+RequiresContextMetadata: false
+
+MethodologicalNotes:
+  MBMPPlus:
+    Variant: SupervisedBackgroundCorrection
+    UsesGroundTruthMask: true
+    BackgroundDefinition: plume == 0
+    PlumeDefinition: plume > 0
+    RegressionModel: Ridge
+    Purpose: Remove structured background/surface noise from inverse MBMP.
+    OperationalStatus: Not operational without replacing the ground-truth background mask.
+    Documentation: Docs/TechnicalDecision_MBMPPlus.md
