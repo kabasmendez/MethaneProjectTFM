@@ -308,49 +308,6 @@ El desempeño se evaluó mediante métricas de segmentación a nivel de píxel:
 
 ---
 
-## Aportes principales
-
-Este proyecto aporta:
-
-1. Un flujo experimental completo para segmentación de plumas de metano en imágenes Sentinel-2.
-2. Una comparación entre configuraciones espectrales y configuraciones espectrales con viento.
-3. Una evaluación de arquitecturas U-Net y Transformer aplicadas a teledetección de metano.
-4. Un análisis cuantitativo y cualitativo de errores de segmentación.
-5. Una base reproducible para investigación académica sobre monitoreo de metano mediante observación de la Tierra.
-6. Evidencia de que los realces espectrales SWIR son especialmente relevantes para esta tarea.
-7. Una discusión crítica sobre las limitaciones del uso de viento agregado en segmentación a escala de píxel.
-
----
-
-## Limitaciones
-
-Los resultados deben interpretarse considerando:
-
-- La resolución espacial y espectral de Sentinel-2.
-- La dificultad de detectar plumas débiles o pequeñas.
-- La incertidumbre de las máscaras de referencia.
-- La variabilidad del fondo terrestre.
-- La representación agregada de las variables meteorológicas.
-- La ausencia de productos atmosféricos locales de alta resolución temporal y espacial.
-
----
-
-## Contexto académico
-
-Este repositorio fue desarrollado como parte de un **Trabajo Final de Máster en Teledetección**, con enfoque en la aplicación de aprendizaje profundo y observación de la Tierra para la detección de emisiones de metano.
-
-El proyecto integra conceptos de:
-
-- Teledetección.
-- Monitoreo atmosférico de metano.
-- Procesamiento multiespectral Sentinel-2.
-- Segmentación semántica.
-- Aprendizaje profundo.
-- Arquitecturas U-Net.
-- Vision Transformers.
-- Evaluación espacial de errores.
-
----
 
 ## Autores
 
