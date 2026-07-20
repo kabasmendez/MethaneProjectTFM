@@ -352,33 +352,24 @@ El proyecto integra conceptos de:
 
 ---
 
-## Autoría y créditos
+## Autores
 
-### Autora del proyecto
+- **Karen Tatiana Bastidas Méndez**
+- **Luis Gómez-Chova**
+- **César Aybar**
 
-**Karen Tatiana Bastidas Méndez**  
-Máster en Teledetección  
-Universitat de València  
+**Universitat de València**  
+Grupo de investigación **Image and Signal Processing (ISP)**
 
-Este repositorio contiene el desarrollo experimental, procesamiento, entrenamiento, evaluación y documentación técnica asociados al Trabajo Final de Máster sobre segmentación automática de plumas de metano en imágenes Sentinel-2 mediante aprendizaje profundo.
+---
 
-### Dirección y orientación académica
+## Dataset, financiación y datos fuente
 
-Este trabajo no habría sido posible sin el apoyo del **Dr. Luis Gómez-Chova** y **César Aybar**, quienes orientaron el desarrollo del proyecto con rigor y claridad. Sus observaciones contribuyeron de forma sustancial tanto al diseño experimental como a la escritura y consolidación del documento final.
-
-### Grupo de investigación
-
-El trabajo se desarrolla en el marco del grupo de investigación **Image and Signal Processing (ISP)** de la **Universitat de València**, dentro de una línea de investigación relacionada con la detección de metano mediante observación de la Tierra.
-
-El apoyo técnico y humano de sus integrantes, así como el conocimiento compartido durante el proceso, fueron parte esencial del desarrollo de este proyecto.
-
-### Dataset, financiación y datos fuente
-
-El conjunto de datos empleado en este trabajo fue financiado por el programa **Climate Change AI (CCAI) Innovation Grants**, gestionado por **Climate Change AI** con el apoyo del **Global Methane Hub (GMH)**.
+El conjunto de datos empleado en este proyecto fue financiado por el programa **Climate Change AI (CCAI) Innovation Grants**, gestionado por **Climate Change AI** con el apoyo del **Global Methane Hub (GMH)**.
 
 También recibió apoyo del **Ministerio de Ciencia, Innovación y Universidades de España**, mediante las subvenciones **PID2023-148485OB-C21 / C22**, financiadas por **MCIU/AEI/10.13039/501100011033** y **FEDER, UE**.
 
-Se agradece al **International Methane Emissions Observatory (IMEO)** de **UNEP** por facilitar el acceso a las anotaciones de plumas de metano de su plataforma **MARS**.
+El **International Methane Emissions Observatory (IMEO)** de **UNEP** facilitó el acceso a las anotaciones de plumas de metano de la plataforma **MARS**.
 
 Los datos de radiancia de **Sentinel-2** fueron obtenidos del catálogo de la **Agencia Espacial Europea (ESA)**.
 
@@ -389,4 +380,3 @@ Los datos de radiancia de **Sentinel-2** fueron obtenidos del catálogo de la **
 Este repositorio tiene fines académicos y de investigación. Los resultados deben interpretarse dentro de las limitaciones del dataset, la resolución espacial y espectral de Sentinel-2, la disponibilidad de máscaras de referencia y la incertidumbre asociada a las variables meteorológicas utilizadas.
 
 El uso de los datos, resultados y salidas incluidas en este repositorio debe respetar las condiciones de acceso, licencia y citación correspondientes a MethaneSet, TACO Foundation, ESA Sentinel-2, IMEO/MARS y las entidades financiadoras mencionadas.
-
