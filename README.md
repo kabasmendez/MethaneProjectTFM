@@ -208,8 +208,6 @@ El proyecto genera paneles cualitativos para comparar la imagen de entrada, la m
   <img src="assets/readme/FigureChapterFixedComparisonCase01.png" width="900">
 </p>
 
-> Si esta imagen no aparece en GitHub, revisa el nombre real dentro de `assets/readme/` y actualiza la ruta en el README.
-
 ---
 
 ## Estructura de salidas generadas
