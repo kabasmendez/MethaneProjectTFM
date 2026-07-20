@@ -1,41 +1,76 @@
 # Segmentación de Plumas de Metano en Imágenes Sentinel-2 mediante Aprendizaje Profundo
 
-Este repositorio contiene el flujo experimental desarrollado para el Trabajo Final de Máster orientado a la **segmentación automática de plumas de metano en imágenes Sentinel-2** mediante modelos de aprendizaje profundo.
+<p align="center">
+  <b>Trabajo Final de Máster · Teledetección · Deep Learning · Sentinel-2 · Metano</b>
+</p>
 
-El proyecto combina técnicas de teledetección, procesamiento multiespectral, realces espectrales sensibles al metano, variables meteorológicas auxiliares y arquitecturas de segmentación semántica basadas en U-Net y Transformers.
+<p align="center">
+  <img src="https://img.shields.io/badge/Remote%20Sensing-Sentinel--2-blue" />
+  <img src="https://img.shields.io/badge/Task-Binary%20Segmentation-green" />
+  <img src="https://img.shields.io/badge/Models-U--Net%20%7C%20Transformers-purple" />
+  <img src="https://img.shields.io/badge/Dataset-MethaneSet-orange" />
+  <img src="https://img.shields.io/badge/Language-Python-yellow" />
+</p>
 
 ---
 
 ## Descripción general
 
-El metano es uno de los gases de efecto invernadero más relevantes para la mitigación climática a corto plazo. Aunque permanece menos tiempo en la atmósfera que el dióxido de carbono, tiene un potencial de calentamiento global mucho mayor en horizontes temporales cortos. Por esta razón, la detección y delimitación de plumas de metano asociadas a superemisores es una tarea clave para el monitoreo ambiental, energético y climático.
+Este repositorio contiene el flujo experimental desarrollado para el Trabajo Final de Máster orientado a la **segmentación automática de plumas de metano en imágenes Sentinel-2** mediante modelos de aprendizaje profundo.
 
-Este proyecto aborda el problema como una tarea de **segmentación semántica binaria**, donde cada píxel de un parche Sentinel-2 se clasifica como:
+El proyecto combina **teledetección multiespectral**, realces espectrales sensibles al metano, comparación entre imágenes objetivo y referencia, variables meteorológicas auxiliares y arquitecturas de segmentación semántica basadas en **U-Net** y **Transformers**.
 
-- Fondo.
-- Pluma de metano.
+El problema se aborda como una tarea de **segmentación semántica binaria**, donde cada píxel de un parche Sentinel-2 se clasifica como:
+
+| Clase | Descripción |
+|---|---|
+| Fondo | Píxeles sin pluma de metano |
+| Pluma de metano | Píxeles asociados a la emisión detectada |
+
+---
+
+## ¿Qué genera este proyecto?
+
+El proyecto no solo entrena modelos. También genera un conjunto completo de productos para análisis técnico, evaluación y documentación académica:
+
+| Producto generado | Descripción |
+|---|---|
+| Tensores multicanal | Entradas con bandas Sentinel-2, ratios, realces y viento |
+| Máscaras binarias | Segmentación de pluma frente a fondo |
+| Mapas de probabilidad | Salidas continuas del modelo antes del umbral |
+| Métricas por muestra | Dice, IoU, Precision, Recall, falsos positivos y falsos negativos |
+| Tablas resumen | Comparación entre modelos y configuraciones |
+| Figuras del capítulo de resultados | Gráficos usados para interpretar el desempeño |
+| Paneles cualitativos | Comparación visual entre predicción y referencia |
+| Análisis de errores | Identificación de omisiones, sobresegmentación y falsos positivos |
+
+---
+
+## Flujo general del proyecto
+
+```mermaid
+flowchart TD
+    A[Sentinel-2 Target Image] --> C[Construcción de variables]
+    B[Sentinel-2 Reference Image] --> C
+    C --> D[ConfigB: 9 canales espectrales]
+    C --> E[ConfigC: 9 canales espectrales + viento]
+    D --> F[Modelos de segmentación]
+    E --> F
+    F --> G[Mapa de probabilidad]
+    G --> H[Máscara binaria de pluma]
+    H --> I[Evaluación cuantitativa]
+    H --> J[Análisis visual]
+    I --> K[Resultados del TFM]
+    J --> K
+```
+
+---
+
+## Datos utilizados
 
 El trabajo se basa en muestras derivadas de **MethaneSet / TACO Foundation**, un conjunto de datos orientado a la detección de plumas de metano a partir de imágenes Sentinel-2, imágenes de referencia, máscaras binarias y metadatos asociados.
 
----
-
-## Objetivo del proyecto
-
-El objetivo principal es evaluar si diferentes arquitecturas de aprendizaje profundo pueden segmentar automáticamente plumas de metano en imágenes Sentinel-2 utilizando:
-
-- Bandas espectrales Sentinel-2.
-- Índices y ratios sensibles a diferencias en el SWIR.
-- Realces derivados de la comparación entre imagen objetivo e imagen de referencia.
-- Variables meteorológicas de viento.
-- Arquitecturas U-Net convolucionales y modelos con componentes Transformer.
-
----
-
-## Conjunto de datos
-
-El conjunto de datos final se construyó a partir de muestras de MethaneSet filtradas bajo criterios de calidad y consistencia experimental. Se consideraron principalmente muestras del sector oil & gas, con plumas reales, productos completos y condiciones utilizables.
-
-La partición final utilizada en los experimentos fue:
+La colección final utilizada en los experimentos se filtró considerando muestras con plumas reales, productos completos, condiciones utilizables y fuentes del sector oil & gas.
 
 | Conjunto | Número de muestras |
 |---|---:|
@@ -50,47 +85,47 @@ Cada muestra corresponde a un parche de **200 × 200 píxeles** con resolución 
 
 ## Configuraciones de entrada
 
-Durante el desarrollo del proyecto se trabajó con tres configuraciones de variables.
+El proyecto evalúa diferentes formas de representar la información espectral y meteorológica antes de alimentar los modelos.
 
-### ConfigA: configuración espectral básica
+### ConfigA · Línea base espectral preliminar
 
-ConfigA corresponde a una configuración preliminar evaluada en una fase inicial del proyecto. Incluye siete canales:
+ConfigA fue utilizada en una fase inicial exploratoria. Incluye siete canales:
 
-1. B8A  
-2. B11  
-3. B12  
-4. NDSWIR  
-5. RatioB12B11  
-6. RatioB12B8A  
-7. MBMP  
+| Canal | Descripción |
+|---|---|
+| B8A | Banda red-edge / NIR estrecha |
+| B11 | SWIR 1 |
+| B12 | SWIR 2 |
+| NDSWIR | Índice normalizado entre bandas SWIR |
+| RatioB12B11 | Relación B12/B11 |
+| RatioB12B8A | Relación B12/B8A |
+| MBMP | Realce multibanda basado en comparación target-reference |
 
-Esta configuración permitió establecer una línea base espectral inicial, pero no forma parte de la comparación final del TFM.
+ConfigA no forma parte de la comparación final, pero sirvió para justificar la evolución hacia una configuración espectral más completa.
 
-### ConfigB: configuración espectral avanzada
+### ConfigB · Configuración espectral avanzada
 
-ConfigB es la configuración espectral principal utilizada como referencia en los experimentos finales. Incluye nueve canales:
+ConfigB es la configuración principal de referencia del TFM. Incluye nueve canales:
 
-1. B8A  
-2. B11  
-3. B12  
-4. NDSWIR  
-5. RatioB12B11  
-6. RatioB12B8A  
-7. MBMP  
-8. MBMPPlus  
-9. DualEnhancementB12B11  
+| Grupo | Canales |
+|---|---|
+| Bandas Sentinel-2 | B8A, B11, B12 |
+| Índices y ratios | NDSWIR, RatioB12B11, RatioB12B8A |
+| Realces target-reference | MBMP, MBMPPlus, DualEnhancementB12B11 |
 
-Esta configuración combina bandas crudas Sentinel-2, ratios SWIR, índices normalizados y realces target-reference diseñados para resaltar contrastes asociados a la presencia de metano.
+Esta configuración busca resaltar contrastes espectrales asociados a la presencia de metano, especialmente en las bandas SWIR.
 
-### ConfigC: configuración espectral con viento
+### ConfigC · Configuración espectral con viento
 
 ConfigC extiende ConfigB incorporando tres variables meteorológicas:
 
-10. WindSpeed10m  
-11. WindDirCos10m  
-12. WindDirSin10m  
+| Canal | Descripción |
+|---|---|
+| WindSpeed10m | Velocidad del viento a 10 m |
+| WindDirCos10m | Componente coseno de la dirección del viento |
+| WindDirSin10m | Componente seno de la dirección del viento |
 
-Estas variables se incorporan como canales constantes por muestra. Su objetivo es aportar contexto físico relacionado con la dirección y velocidad del viento, factores que pueden influir en la forma y desplazamiento de la pluma.
+Estas variables se incorporan como canales constantes por muestra. Su objetivo es aportar contexto físico sobre la dirección y dispersión potencial de la pluma.
 
 ---
 
@@ -98,61 +133,42 @@ Estas variables se incorporan como canales constantes por muestra. Su objetivo e
 
 Se evaluaron cuatro familias de modelos de segmentación:
 
-| Modelo | Descripción |
-|---|---|
-| SimpleUNet | Arquitectura U-Net base |
-| EnhancedUNet | Variante convolucional mejorada de U-Net |
-| TransformerUNet | U-Net con componentes Transformer |
-| TransformerPlus | Variante Transformer ampliada con mayor capacidad contextual |
+| Modelo | Tipo | Rol en el experimento |
+|---|---|---|
+| SimpleUNet | Convolucional | Línea base U-Net |
+| EnhancedUNet | Convolucional mejorada | Mayor capacidad local y estabilidad |
+| TransformerUNet | Híbrido CNN + Transformer | Contexto espacial de mayor alcance |
+| TransformerPlus | Transformer ampliado | Modelo con mayor capacidad contextual |
 
-Todos los modelos generan mapas de probabilidad por píxel, que posteriormente se convierten en máscaras binarias mediante un umbral de decisión.
+Todos los modelos producen mapas de probabilidad por píxel, que luego se transforman en máscaras binarias mediante un umbral de decisión.
 
 ---
 
 ## Diseño experimental
 
-Los experimentos finales comparan:
+Los experimentos finales se organizaron alrededor de dos run tags principales:
+
+| Run tag | Contenido |
+|---|---|
+| 101622 | SimpleUNet, EnhancedUNet y TransformerUNet |
+| 101840 | TransformerPlus |
+
+La comparación principal se centra en:
 
 - ConfigB frente a ConfigC.
 - Modelos convolucionales frente a modelos con componentes Transformer.
-- Métricas globales de segmentación.
-- Comportamiento por muestra.
-- Errores de falsos positivos y falsos negativos.
-- Influencia del tamaño de la pluma y del fluxrate.
-- Calidad visual de las predicciones.
-
-Los principales experimentos incluidos en este repositorio son:
-
-| Run Tag | Contenido |
-|---|---|
-| 101622 | Experimentos principales con SimpleUNet, EnhancedUNet y TransformerUNet |
-| 101840 | Experimentos con TransformerPlus |
-
----
-
-## Métricas de evaluación
-
-El desempeño de los modelos se evaluó mediante métricas de segmentación a nivel de píxel:
-
-- Dice.
-- Intersection over Union.
-- Precision.
-- Recall.
-- Global Dice.
-- Global IoU.
-- Falsos positivos.
-- Falsos negativos.
-- Relación de área predicha frente a área real.
-- Categorías de calidad de predicción.
-- Sensibilidad al umbral de decisión.
+- Métricas globales y métricas por muestra.
+- Análisis de falsos positivos y falsos negativos.
+- Influencia del tamaño de pluma y del fluxrate.
+- Evaluación cualitativa de predicciones.
 
 ---
 
 ## Resultados principales
 
-El mejor rendimiento global fue obtenido por **TransformerPlus con ConfigB**, con los siguientes valores aproximados:
+El mejor desempeño global fue obtenido por **TransformerPlus con ConfigB**.
 
-| Métrica | Valor |
+| Métrica | Valor aproximado |
 |---|---:|
 | Mean Dice | 0.6368 |
 | Mean IoU | 0.5082 |
@@ -162,13 +178,66 @@ El mejor rendimiento global fue obtenido por **TransformerPlus con ConfigB**, co
 | Global IoU | 0.5127 |
 | Mejor umbral | 0.30 |
 
-Los resultados muestran que:
+### Lectura general de resultados
 
-- ConfigB fue la configuración más robusta en términos generales.
-- La incorporación de variables de viento en ConfigC no mejoró sistemáticamente los resultados.
-- TransformerPlus obtuvo el mejor desempeño global.
-- El viento puede ser físicamente relevante, pero su representación disponible en el dataset puede ser demasiado agregada para mejorar una tarea de segmentación a escala de píxel.
-- Los principales errores aparecen en plumas débiles, bordes de pluma, fondos heterogéneos y casos de sobresegmentación.
+Los resultados indican que:
+
+- **ConfigB** fue la configuración más robusta en términos generales.
+- La incorporación de viento en **ConfigC** no mejoró sistemáticamente el rendimiento.
+- **TransformerPlus** obtuvo el mejor resultado global.
+- Los realces espectrales SWIR fueron especialmente relevantes para la segmentación.
+- Los errores más frecuentes aparecen en plumas débiles, bordes difusos, fondos heterogéneos y casos de sobresegmentación.
+
+---
+
+## Visualización de resultados
+
+### Comparación global de precisión y exhaustividad
+
+La siguiente figura resume el comportamiento global de los modelos en términos de precisión y exhaustividad.
+
+<p align="center">
+  <img src="assets/readme/precision_recall_global.png" width="850">
+</p>
+
+### Ejemplo visual de predicción
+
+El proyecto genera paneles cualitativos para comparar la imagen de entrada, la máscara de referencia y la predicción del modelo.
+
+<p align="center">
+  <img src="assets/readme/FigureChapterFixedComparisonCase01.png" width="900">
+</p>
+
+> Si esta imagen no aparece en GitHub, revisa el nombre real dentro de `assets/readme/` y actualiza la ruta en el README.
+
+---
+
+## Estructura de salidas generadas
+
+```text
+Outputs/
+├── Experiments/
+│   ├── 101622/
+│   │   ├── ConfigB/
+│   │   │   ├── SimpleUNet
+│   │   │   ├── EnhancedUNet
+│   │   │   └── TransformerUNet
+│   │   └── ConfigC/
+│   │       ├── SimpleUNet
+│   │       ├── EnhancedUNet
+│   │       └── TransformerUNet
+│   │
+│   └── 101840/
+│       ├── ConfigB/
+│       │   └── TransformerPlus
+│       └── ConfigC/
+│           └── TransformerPlus
+│
+└── ResultsChapter_101622_101840/
+    ├── Figures/
+    ├── Tables/
+    └── Resúmenes utilizados en el capítulo de resultados
+```
 
 ---
 
@@ -176,25 +245,122 @@ Los resultados muestran que:
 
 ```text
 MethaneProjectTFM/
+├── App/
+├── Configs/
+├── Notebooks/
 ├── Scripts/
 │   ├── Step*.py
-│   └── Scripts de preprocesamiento, entrenamiento, evaluación y visualización
+│   └── Scripts de procesamiento, entrenamiento, evaluación y visualización
 │
+├── Source/
+├── Tests/
 ├── Outputs/
 │   ├── Experiments/
-│   │   ├── 101622/
-│   │   │   ├── ConfigB/
-│   │   │   └── ConfigC/
-│   │   └── 101840/
-│   │       ├── ConfigB/
-│   │       └── ConfigC/
-│   │
 │   └── ResultsChapter_101622_101840/
-│       ├── Tables/
-│       ├── Figures/
-│       └── Resultados finales utilizados en el capítulo de resultados
+│
+├── assets/
+│   └── readme/
 │
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
-└── Archivos de configuración del proyecto
+└── pyproject.toml
+```
+
+---
+
+## Reproducibilidad
+
+El repositorio contiene los scripts principales y salidas seleccionadas necesarias para documentar y reproducir el análisis final del TFM.
+
+Algunos archivos pesados, como tensores completos, modelos entrenados o checkpoints, pueden no estar incluidos directamente en GitHub debido a las restricciones de tamaño.
+
+Ejemplo de ejecución del análisis de resultados:
+
+```bash
+conda activate deep
+
+cd /data/users/kabasmen/MethaneProjectTFM
+
+python Scripts/Step17AnalyzeResultsForChapter.py \
+  --mode all \
+  --ProjectRoot /data/users/kabasmen/MethaneProjectTFM \
+  --OutputDir Outputs/ResultsChapter_101622_101840 \
+  --RunTags 101622,101840 \
+  --Experiment All
+```
+
+---
+
+## Métricas de evaluación
+
+El desempeño se evaluó mediante métricas de segmentación a nivel de píxel:
+
+| Métrica | Interpretación |
+|---|---|
+| Dice | Solapamiento entre predicción y máscara real |
+| IoU | Intersección sobre unión |
+| Precision | Proporción de píxeles predichos como pluma que son correctos |
+| Recall | Proporción de píxeles reales de pluma detectados |
+| FP | Píxeles de fondo clasificados erróneamente como pluma |
+| FN | Píxeles de pluma omitidos |
+| AreaRatio | Relación entre área predicha y área real |
+
+---
+
+## Aportes principales
+
+Este proyecto aporta:
+
+1. Un flujo experimental completo para segmentación de plumas de metano en imágenes Sentinel-2.
+2. Una comparación entre configuraciones espectrales y configuraciones espectrales con viento.
+3. Una evaluación de arquitecturas U-Net y Transformer aplicadas a teledetección de metano.
+4. Un análisis cuantitativo y cualitativo de errores de segmentación.
+5. Una base reproducible para investigación académica sobre monitoreo de metano mediante observación de la Tierra.
+6. Evidencia de que los realces espectrales SWIR son especialmente relevantes para esta tarea.
+7. Una discusión crítica sobre las limitaciones del uso de viento agregado en segmentación a escala de píxel.
+
+---
+
+## Limitaciones
+
+Los resultados deben interpretarse considerando:
+
+- La resolución espacial y espectral de Sentinel-2.
+- La dificultad de detectar plumas débiles o pequeñas.
+- La incertidumbre de las máscaras de referencia.
+- La variabilidad del fondo terrestre.
+- La representación agregada de las variables meteorológicas.
+- La ausencia de productos atmosféricos locales de alta resolución temporal y espacial.
+
+---
+
+## Contexto académico
+
+Este repositorio fue desarrollado como parte de un **Trabajo Final de Máster en Teledetección**, con enfoque en la aplicación de aprendizaje profundo y observación de la Tierra para la detección de emisiones de metano.
+
+El proyecto integra conceptos de:
+
+- Teledetección.
+- Monitoreo atmosférico de metano.
+- Procesamiento multiespectral Sentinel-2.
+- Segmentación semántica.
+- Aprendizaje profundo.
+- Arquitecturas U-Net.
+- Vision Transformers.
+- Evaluación espacial de errores.
+
+---
+
+## Autora
+
+**Karen Tatiana Bastidas Méndez**  
+Máster en Teledetección  
+Universitat de València  
+
+---
+
+## Aviso
+
+Este repositorio tiene fines académicos y de investigación. Los resultados deben interpretarse dentro de las limitaciones del dataset, la resolución de Sentinel-2, la disponibilidad de máscaras de referencia y la incertidumbre asociada a las variables meteorológicas utilizadas.
+EOF
